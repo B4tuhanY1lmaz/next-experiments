@@ -5,7 +5,7 @@ import { FaPlayCircle } from "react-icons/fa";
 import styles from "./styles.module.css"
 
 function Header() {
-    return <header className={styles.header}>
+    return <header className={styles.header} container fluid>
         <div className={styles.headerWrapper}>
             <Link href="/" className={styles.logo}>
                 <FaPlayCircle /> TESTFILMS
