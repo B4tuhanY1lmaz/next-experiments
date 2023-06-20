@@ -1,8 +1,8 @@
 import React from "react";
-// import HomeContainer from "@/containers/home";
+import HomeContainer from "@/containers/home";
 
 function HomePage() {
-    return <div>Hello World!</div>
+    return <HomeContainer />;
 }
 
 export default HomePage;
