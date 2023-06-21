@@ -17,7 +17,12 @@ function HomeContainer() {
         <MoviesSection 
         title="Belki izlersin" 
         movies={Movies.results.slice(7, 14)}/>
+        <MoviesSection 
+        title="Bak şimdi izledin aha izledin" 
+        movies={Movies.results.slice(14, 21)}/>
     </div>;
 }
 
 export default HomeContainer
+
+// I did that lol!

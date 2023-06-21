@@ -11,7 +11,7 @@ function MoviesSection({ title, movies }) {
             <div className={styles.movies}>
                 {Array.isArray(movies) && movies.map((movie) => (
                     <div className={styles.movie} key={movie.id}>
-                        <Link href={'/movie/${movie.id}'}>  // I really don't know what I did over there but it works.
+                        <Link href={`/movie/${movie.id}`}>  // I really don't know what I did over there but it works.
                             <Image 
                                 fill
                                 unoptimized
