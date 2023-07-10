@@ -1,0 +1,66 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    column-gap: 24px;
+    width: 62%;
+    position: relative;
+    min-height: 50px;
+    margin: 300px auto;
+}
+
+.grid__cell {
+    @include mq-between(xxl, max) {
+        margin-left: 0px;
+    }
+    @include xxl {
+        margin-left: 0px;
+    }
+    flex: 0 0 calc(0.46 / 2 * 100% - (1 - 0.46 / 2) * 24px);
+    @include flex-column;
+    position: relative;
+}
+
+.name {
+    text-align: center;
+    letter-spacing: 1px;
+    position: center;
+    flex-grow: 10;
+    color: #fafafa;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-right: 25px;
+}
+
+.description {
+    text-align: center;
+    letter-spacing: 0px;
+    position: relative;
+    flex-grow: 1;
+    min-height: 40px;
+    font-size: 20px;
+}
+
+.line {
+    width: calc(100% - 0px);
+    height: auto;
+    vertical-align: top;
+    object-position: center center;
+    object-fit: cover;
+    position: relative;
+    margin: 20px;
+}
+
+.profileP {
+    width: calc(100% - 0px);
+    height: auto;
+    aspect-ratio: 1;
+    vertical-align: top;
+    object-fit: cover;
+    object-position: center center;
+    position: relative;
+    border-radius: 100px;
+    margin-left: 60px;
+    margin-bottom: 25px;
+}
