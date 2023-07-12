@@ -5,11 +5,11 @@ function aboutPage() {
     <div className="flex justify-center mt-40 mb-20">
         <h2 className="text-center text-4xl underline">About me.</h2>
         </div>
-        <div className="grid grid-cols-8">
-            <div className="justify-center col-start-3 col-span-5">
-                <h3 className="text-2xl">Who Am I?</h3>
+        <div className="flex-col mr-40 ml-40">
+            <div className="justify-center">
+                <h3 className="text-2xl mb-3">Who Am I?</h3>
             </div>
-            <div className="col-start-3 col-span-4 justify-center">
+            <div className="flex justify-center">
             My name is Batuhan Yılmaz and I’m an 18 year old high school student who interested in lot’s of things. I do live in Nevşehir, Turkey. I’m a 12th grade student and a computer nerd on my own. I’m also interested in designing stuff and when I get my school done I’m planning to hop into this colorfull world of the designers and web developing.
 
 I love keeping things simple so this about page is gonna be an oversimplified page.

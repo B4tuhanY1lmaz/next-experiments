@@ -23,7 +23,9 @@ function AboutBox() {
             I write my adventures over there and I'm always open to new ideas. If you want to get in touch with me, feel free to send me an e-mail over at batuhan@thebatuhansnetwok.xyz
         </div>
         </div>
-            <BsFillArrowDownCircleFill className="justify-items-center col-start-1 col-span-10 row-start-6 w-full"/>
+        <button className="justify-items-center col-start-1 col-span-10 row-start-6 w-full text-5xl mb-20">
+            <BsFillArrowDownCircleFill className="justify-items-center w-full"/>
+            </button>
     </div>
     
 }
