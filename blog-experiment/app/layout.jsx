@@ -11,8 +11,9 @@ const interFontFamily = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className={interFontFamily.className}>
-            <body className="container">
+        <html lang="en" class="items-strech justify-center" className={interFontFamily.className}>
+            <title>The Batuhan's Network</title>
+            <body>
                 <Header />
                 <main>{children}</main>
                 <Footer />
