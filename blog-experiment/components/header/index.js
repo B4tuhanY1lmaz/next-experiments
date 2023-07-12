@@ -1,22 +1,20 @@
 import React from "react";
 import Link from "next/link";
 
-import styles from "./styles.module.css"
-
 function Header() {
-    return <header className={styles.header} container fluid>
-        <div className={styles.headerWrapper}>
-            <Link href="/" className={styles.logo}>
+    return <div class="sticky top-0 bg-black">
+        <div className="flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-8 text-24 tracking-700 text-white mt-10 ml-20">
                 The Batuhan's Network
             </Link>
-            <nav className={styles.navigationMenu}>
-                <Link href="/">Home</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
+            <nav className="flex gap-5 text-18 font-medium tracking-normal mt-10 mr-20">
+                <Link href="/" className="hover:underline">Home</Link>
+                <Link href="/blog" className="hover:underline">Blog</Link>
+                <Link href="/about" className="hover:underline">About</Link>
+                <Link href="/contact" className="hover:underline">Contact</Link>
             </nav>
         </div>
-    </header>
+    </div>
 }
 
 export default Header;

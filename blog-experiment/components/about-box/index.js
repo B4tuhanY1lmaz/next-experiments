@@ -2,26 +2,30 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "./styles.module.css";
-import lineImage from "@/assets/line.png";
+import { BsFillArrowDownCircleFill } from "react-icons/bs";
 import avatarImage from "@/assets/avatar.jpg";
 
 function AboutBox() {
-    return <main className={styles.grid} fluid container>
-        <div className={styles.grid_cell}>
+    return <div className="grid grid-cols-10 gap-5 grid-rows-6 place-content-center">
+        <div className="items-center col-start-4 col-span-1 row-start-3">
             <Image 
-            src="https://thebatuhansnetwork.xyz/assets/img/avatar.jpg"
+            src={avatarImage}
             alt="avatar" 
-            width={50} 
-            height={50}  
-            className={styles.profileP} 
+            width={100} 
+            height={100} 
+            className="rounded-full"
             />
         </div>
-        <h2 className={styles.name}>Batuhan Y. Yılmaz</h2>
-        <Image src={lineImage} width={500} />
-        <div className={styles.description}>I'm a 18 years old high school student who is interested in FOSS projects, Photography, Graphic design and technology.
+        <div className="col-start-5 col-span-3 row-start-3 row-end-5">
+        <h2 className="text-3xl underline">Batuhan Y. Yılmaz</h2>
+        <div>
+            I'm a 18 years old high school student who is interested in FOSS projects, Photography, Graphic design and technology.
+            I write my adventures over there and I'm always open to new ideas. If you want to get in touch with me, feel free to send me an e-mail over at batuhan@thebatuhansnetwok.xyz
         </div>
-    </main>
+        </div>
+            <BsFillArrowDownCircleFill className="justify-items-center col-start-1 col-span-10 row-start-6 w-full"/>
+    </div>
+    
 }
 
 export default AboutBox;
