@@ -1,8 +1,4 @@
-
-
 import React from "react";
-import Link from "next/link"
-import Image from "next/image";
 
 import BlogPosts from "@/components/blogposts";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
@@ -15,15 +11,16 @@ const getPosts = async () => {
 async function BlogBox() {
     
     const data = await getPosts();
+    const data1 = data.slice(1 ,6)
 
     return <div className="flex">
         <div className="flex-col gap-5 mt-20">
             <h2 className="text-2xl underline ml-20">Latest from Blog</h2>
             <div className="flex flex-wrap gap-5 mt-20 ml-28">
-                {data.map((data) => (
+                {data1.map((data1) => (
                     <BlogPosts 
-                    title={data.title}
-                    subtitle={data.body}
+                    title={data1.title}
+                    subtitle={data1.body}
                     />
                 )
                 )}
