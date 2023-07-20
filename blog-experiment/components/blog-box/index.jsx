@@ -11,12 +11,12 @@ const getPosts = async () => {
 async function BlogBox() {
     
     const data = await getPosts();
-    const data1 = data.slice(1 ,6)
+    const data1 = data.slice(1 ,7)
 
     return <div className="flex">
         <div className="flex-col gap-5 mt-20">
             <h2 className="text-2xl underline ml-20">Latest from Blog</h2>
-            <div className="flex flex-wrap gap-5 mt-20 ml-28">
+            <div className="flex flex-wrap gap-5 mt-20 ml-20">
                 {data1.map((data1) => (
                     <BlogPosts 
                     title={data1.title}
@@ -26,7 +26,7 @@ async function BlogBox() {
                 )}
             </div>
         </div>
-        <p className="ml-20 mt-60 mr-20 text-3xl hover:underline">
+        <p className="mt-60 mr-20 text-3xl hover:underline">
             Read more over at my blog!
             <BsFillArrowRightCircleFill className="w-full mt-3"/>
             </p>
