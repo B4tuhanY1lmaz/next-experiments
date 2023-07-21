@@ -1,7 +1,9 @@
 import React from "react";
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, getDoc, doc, DocumentSnapshot, query } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, getDoc, doc, addDoc, query } from 'firebase/firestore/lite';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_KEY,
@@ -48,4 +50,22 @@ export async function getBlogShort() {
         return { id: doc.id, ...doc.data() };
     })
     return blogShorts
+}
+
+export async function handleSubmit(event) {
+    event.preventDefault();
+
+    const data = {
+        name: String(event.target.name.value),
+        email: String(event.target.email.value),
+        message: String(event.target.message.value),
+    }
+
+    console.log(data);
+    try {
+        const docRef = await addDoc(collection(db, "messages"), (data));
+        console.log(data, "send successfully with the id of",  docRef.id);
+    } catch (error) {
+        console.log("There was an error", error);
+    }
 }

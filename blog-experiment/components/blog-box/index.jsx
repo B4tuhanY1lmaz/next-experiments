@@ -16,7 +16,7 @@ async function BlogBox() {
     return <div className="flex">
         <div className="flex-col gap-5 mt-20">
             <h2 className="text-2xl underline ml-20">Latest from Blog</h2>
-            <div className="flex flex-wrap gap-5 mt-20 ml-20">
+            <div className="flex flex-wrap gap-5 mt-20 ml-20 ">
                 {data1.map((data1) => (
                     <BlogPosts 
                     title={data1.title}

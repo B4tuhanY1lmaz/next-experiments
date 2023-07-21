@@ -1,19 +1,9 @@
+"use client"
+
 import React from "react";
-
-async function handleSubmit(event) {
-    event.preventDefault();
-
-    const data = {
-        name: String(event.target.name.value),
-        email: String(event.target.email.value),
-        message: String(event.target.message.value),
-    }
-
-    console.log(data); // For now it only console logs the data and this is completely on client side but I'll figure it out.
-}
+import { handleSubmit } from "@/libs/firebase";
 
 function contactPage() {
-
     return <div>
     <div className="flex justify-center mt-40 mb-20">
         <h2 className="text-center text-4xl underline">Get in touch.</h2>
@@ -29,6 +19,7 @@ function contactPage() {
                     <input type="email" id="email" autoComplete="off" required/>
                 </div>
                 <div>
+                    <label>Message</label>
                     <textarea 
                     rows={4} 
                     placeholder="Message comes there"
