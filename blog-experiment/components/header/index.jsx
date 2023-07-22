@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
-function Header() {
+const Header = () => {
+
     return <div class="sticky top-0 bg-black">
         <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-8 text-24 tracking-700 text-white mt-10 ml-20">

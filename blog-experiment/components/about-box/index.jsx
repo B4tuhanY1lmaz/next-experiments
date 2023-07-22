@@ -13,7 +13,7 @@ async function AboutBox() {
 
     console.log(getBlogShort())
 
-    return <div className="grid grid-cols-10 gap-5 grid-rows-6 place-content-center">
+    return <div className="grid grid-cols-10 gap-5 grid-rows-6 place-items-center">
         <div className="items-center col-start-4 col-span-1 row-start-3">
             <Image 
             src={data.pp}
@@ -30,7 +30,7 @@ async function AboutBox() {
         </div>
         </div>
         <button className="justify-items-center col-start-1 col-span-10 row-start-6 w-full text-5xl mb-20">
-            <BsFillArrowDownCircleFill className="justify-items-center w-full"/>
+            <BsFillArrowDownCircleFill className="justify-items-center w-full animate-bounce"/>
             </button>
     </div>
     

@@ -1,7 +1,9 @@
 import React from "react";
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, getDoc, doc, addDoc, query } from 'firebase/firestore/lite';
+import { getFirestore, getDocs, getDoc, doc, query } from 'firebase/firestore/lite';
+import { collection, addDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -17,6 +19,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// export const auth = getAuth(app);
 
 export async function getAboutShort() {
     const docAboutShort = doc(db, "About", "about-short");
@@ -66,6 +69,6 @@ export async function handleSubmit(event) {
         const docRef = await addDoc(collection(db, "messages"), (data));
         console.log(data, "send successfully with the id of",  docRef.id);
     } catch (error) {
-        console.log("There was an error", error);
+        console.log("There was an error", error.message);
     }
 }
