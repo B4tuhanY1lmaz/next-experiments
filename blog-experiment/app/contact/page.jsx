@@ -1,9 +1,38 @@
 "use client"
 
 import React from "react";
-import { handleSubmit } from "@/libs/firebase";
+
+import { initializeApp } from "firebase/app";
+import { enableNetwork, getFirestore } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";  
+import { firebaseConfig } from "@/libs/firebase";
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 
 function contactPage() {
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    
+        const data = {
+            name: String(event.target.name.value),
+            email: String(event.target.email.value),
+            message: String(event.target.message.value),
+        }
+
+        console.log(data);
+        try {
+            const docRef = addDoc(collection(db, "messages"), (data));
+            console.log(docRef.id)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
     return <div>
     <div className="flex justify-center mt-40 mb-20">
         <h2 className="text-center text-4xl underline">Get in touch.</h2>

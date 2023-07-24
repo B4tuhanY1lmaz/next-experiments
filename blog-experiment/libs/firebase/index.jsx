@@ -7,15 +7,15 @@ import { getAuth } from "firebase/auth";
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-const firebaseConfig = {
-    apiKey: process.env.FIREBASE_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASUREMENT_ID
-}
+export const firebaseConfig = {
+    apiKey: "AIzaSyDGFUjVTRx52F1guko6_ogkVIcHIrc6DpM",
+    authDomain: "next-experiments-batu.firebaseapp.com",
+    projectId: "next-experiments-batu",
+    storageBucket: "next-experiments-batu.appspot.com",
+    messagingSenderId: "13218623125",
+    appId: "1:13218623125:web:5a4760af4798f9c023759c",
+    measurementId: "G-DFEQWCXL10"
+};
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -53,22 +53,4 @@ export async function getBlogShort() {
         return { id: doc.id, ...doc.data() };
     })
     return blogShorts
-}
-
-export async function handleSubmit(event) {
-    event.preventDefault();
-
-    const data = {
-        name: String(event.target.name.value),
-        email: String(event.target.email.value),
-        message: String(event.target.message.value),
-    }
-
-    console.log(data);
-    try {
-        const docRef = await addDoc(collection(db, "messages"), (data));
-        console.log(data, "send successfully with the id of",  docRef.id);
-    } catch (error) {
-        console.log("There was an error", error.message);
-    }
 }
