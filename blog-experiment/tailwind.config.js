@@ -2,7 +2,7 @@
 module.exports = {
   mode: 'jit',
   content: [
-    "./app/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx,tsx}",
     "./components/**/*.{js,jsx}",
     "./containers/**/*.{js,jsx}",
   ],
